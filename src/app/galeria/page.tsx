@@ -7,6 +7,6 @@ export const metadata: Metadata = {
 
 export default function GaleriaPage() {
   return (
-    <h1>Galeria Page</h1>
+    <h1>Galeria Page 123</h1>
   )
 }
