@@ -2,13 +2,15 @@ import { FaFacebook } from "react-icons/fa";
 import { BiLogoInstagramAlt } from "react-icons/bi";
 import { FaYoutube } from "react-icons/fa";
 
+import Image from "next/image";
+
 export default function Footer() {
   return (
     <div className="w-full bg-[#0E0E0E]">
       <footer className="w-full max-w-96 m-auto py-11 flex flex-col gap-8">
         <div className="flex flex-col items-center gap-3">
           <div className="w-56 flex gap-2 justify-center items-center">
-            <img className="w-12 h-12" src="./assets/logo.png" alt="Logo" />
+            <Image width={48} height={48} src="/assets/logo.png" alt="Logo"></Image>
             <p className="font-bold text-base leading-5 text-white">IE 10589 Puruchuco</p>
           </div>
           <button className="w-56 border-white border-[1px] py-3 rounded-md text-white font-normal text-sm leading-4" type="button">Contactemos</button>

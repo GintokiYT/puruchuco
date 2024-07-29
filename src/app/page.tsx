@@ -3,20 +3,21 @@ import SectionIdeal from "@/components/views/Home/SectionIdeal";
 import SectionPromote from "@/components/views/Home/SectionPromote";
 import { Metadata } from "next";
 import Image from "next/image";
+import prisma from "@libs/db"
 
 export const metadata: Metadata = {
   title: "Inicio - IE 1263 PURUCHUCO",
   description: "Inicio - IE 1263 PURUCHUCO",
 };
 
-export async function getData() {
-  const res = await fetch('http://localhost:3000/api/calendar');
-  return res.json()
+const getData = async () => {
+  const slides = await prisma.calendar.findMany();
+  return slides
 }
 
 export default async function HomePage() {
 
-  const slides = await getData();
+  const slides = await getData(); 
 
   return (
     <>
