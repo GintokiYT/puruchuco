@@ -33,9 +33,11 @@ export default function Form() {
   });
 
   const handleSubmit = async (day: keyof WeekData) => {
+    // const url = "http://localhost:3000/api/calendar";
+    const url = "https://puruchuco.vercel.app/api/calendar"
     const formData = data[day];
 
-    await fetch("http://localhost:3000/api/calendar", {
+    await fetch(url, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
