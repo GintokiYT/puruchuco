@@ -10,9 +10,15 @@ export const metadata: Metadata = {
   description: "Inicio - IE 1263 PURUCHUCO",
 };
 
+const url = "https://puruchuco.vercel.app/api/calendar"
+// const url = "http://localhost:3000/api/calendar"
+
 const getData = async () => {
-  const slides = await prisma.calendar.findMany();
-  return slides.sort((a, b) => a.id - b.id);
+  // const slides = await prisma.calendar.findMany();
+  const response = await fetch(url, { cache: 'no-cache' });
+  const slides = await response.json();
+
+  return slides.sort((a: any, b: any) => a.id - b.id);
 }
 
 export default async function HomePage() {
