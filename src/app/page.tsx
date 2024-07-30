@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 const getData = async () => {
   const slides = await prisma.calendar.findMany();
-  return slides
+  return slides.sort((a, b) => a.id - b.id);
 }
 
 export default async function HomePage() {

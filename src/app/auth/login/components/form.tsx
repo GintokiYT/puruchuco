@@ -16,12 +16,15 @@ export default function FormLogin() {
   const router = useRouter();
 
   const onSubmit = handleSubmit( async (data) => {
+    console.log('Autenticando...');
     const response = await signIn('credentials', {
       email: data.email,
       password: data.password,
       redirect: false
     });
     
+    console.log(response);
+
     if(!response?.ok) {
       setError("Credenciales incorrectas");
       return;

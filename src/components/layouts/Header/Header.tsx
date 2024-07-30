@@ -9,9 +9,14 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { IoIosArrowDown } from "react-icons/io";
 import { IoMdClose } from "react-icons/io";
 
+// import { useSession, signOut } from "next-auth/react";
+
 export default function Header() {
 
-  const pathname = usePathname()
+  // const { data: session, status } = useSession();
+  // console.log("status", status);
+
+  // const pathname = usePathname()
   const [ stateMenu, setStateMenu ] = useState(false);
 
   const handleOpenMenu = () => setStateMenu(true);
@@ -41,10 +46,17 @@ export default function Header() {
           </div>
           <div className="hidden md:flex">
             <ul className="flex gap-6 font-medium text-base">
-              <li className="text-white">
+              {/* <li className="text-white">
                 Niveles
                 <div></div>
-              </li>
+              </li> */}
+              {/* {
+                !session?.user && (
+                  <li className="text-white">
+                    <Link href="/dashboard">Dashboard</Link>
+                  </li>
+                )
+              } */}
               <li className="text-white">
                 <Link href="/galeria">Galería</Link>
               </li>
@@ -61,13 +73,13 @@ export default function Header() {
       { stateMenu && (
         <div className="md:hidden absolute w-full h-[calc(100vh-96px)] bg-white">
           <ul className="flex flex-col px-4 pt-4 font-medium text-base">
-            <li className="py-4 border-b-[1px] border-solid border-p-gray-300">
+            {/* <li className="py-4 border-b-[1px] border-solid border-p-gray-300">
               Niveles
               <div className="flex flex-col gap-4 font-normal text-sm pt-4">
                 <Link href="/niveles/primaria" onClick={handleCloseMenu}>Primaria</Link>
                 <Link href="/niveles/secundaria" onClick={handleCloseMenu}>Secundaria</Link>
               </div>
-            </li>
+            </li> */}
             <li className="py-4 border-b-[1px] border-solid border-p-gray-300">
               <Link href="/galeria" onClick={handleCloseMenu}>Galería</Link>
             </li>

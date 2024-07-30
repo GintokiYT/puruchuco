@@ -2,7 +2,7 @@ import nextAuth, { AuthOptions } from "next-auth";
 import Credentials from "next-auth/providers/credentials";
 import db from "@/libs/db";
 
-const authOptions: AuthOptions = {
+export const authOptions: AuthOptions = {
   secret: process.env.NEXTAUTH_SECRET,
   providers: [
     Credentials({

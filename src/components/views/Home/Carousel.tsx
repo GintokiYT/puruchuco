@@ -26,7 +26,7 @@ export default function CarouselComponent({ slides }: Props) {
           <div className="w-full m-auto pt-6 pb-12" key={slide.id}>
             <div className="w-full max-w-80 m-auto flex flex-col overflow-hidden rounded-md">
               <div className="w-full h-[170px] relative">
-                <Image src="https://res.cloudinary.com/daechpa0d/image/upload/v1722139253/t3gw3fl05qgx6u8xle90.png" alt="image" fill></Image>
+                <Image src={slide.image} alt="image" fill></Image>
               </div>
               <div className="flex flex-col h-[140px] p-4 overflow-hidden gap-1 bg-white">
                 <p className="font-normal text-base leading-5">{ getDay(slide.day) }</p>
