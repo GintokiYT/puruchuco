@@ -15,10 +15,10 @@ const url = "https://puruchuco.vercel.app/api/calendar"
 
 const getData = async () => {
   // const slides = await prisma.calendar.findMany();
-  const response = await fetch(url, { cache: 'no-cache' });
-  const slides = await response.json();
+  // const response = await fetch(url, { cache: 'no-cache' });
+  // const slides = await response.json();
 
-  return slides.sort((a: any, b: any) => a.id - b.id);
+  // return slides.sort((a: any, b: any) => a.id - b.id);
 }
 
 export default async function HomePage() {
@@ -35,7 +35,7 @@ export default async function HomePage() {
       <div className="w-full max-w-7xl m-auto px-4 md:px-6 my-12">
         <h2 className="text-2xl text-center font-bold">Calendario de actividades</h2>
         <div className="w-full max-w-3xl m-auto">
-          <Carousel slides={slides}/>
+          {/* <Carousel slides={slides}/> */}
         </div>
       </div>
       <SectionIdeal />
